@@ -12,7 +12,7 @@ export const Navbar = ({ menuOpen }) => {
         menuOpen ? "sm:flex" : "hidden"
       } justify-center items-center  py-5 px-10 shadow-sm border-b-2 border-black border-opacity-5`}
     >
-      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-3 lg:gap-10 xl:gap-14">
+      <div className="flex flex-col md:flex-row justify-start items-start   gap-8 md:gap-3 lg:gap-10 xl:gap-14">
         <div className="dropdown">
           <div
             tabIndex={0}

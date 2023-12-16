@@ -7,7 +7,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { TfiMenu } from "react-icons/tfi";
 import Image from "next/image";
-import { Navbar } from "./Navbar/Navbar";
+import { Navbar } from "../Navbar/Navbar";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
