@@ -83,7 +83,7 @@ const Areachrt = () => {
           <Tooltip
             contentStyle={{ background: "transparent", border: "none" }}
             labelStyle={{ display: "none" }}
-            position={{ y: 70 }}
+            position={{ y: 80 }}
           />
           <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#E6E6FA " />
         </AreaChart>

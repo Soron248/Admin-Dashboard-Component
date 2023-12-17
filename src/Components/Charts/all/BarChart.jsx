@@ -73,7 +73,7 @@ const Barchrt = () => {
           <Tooltip
             contentStyle={{ background: "transparent", border: "none" }}
             labelStyle={{ display: "none" }}
-            position={{ y: 70 }}
+            position={{ y: 80 }}
           />
           <Bar fill="#8884d8" dataKey="pv" />
         </BarChart>

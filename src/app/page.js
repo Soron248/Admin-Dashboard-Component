@@ -12,17 +12,17 @@ export default function Home() {
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-10 md:gap-16 lg:gap-24 mb-10 md:mb-10">
         <Charts
           name={"New Customers"}
-          count={"3,897"}
+          count={3897}
           poll={"+3.3% "}
           type={"line"}
         />
         <Charts
           name={"New Orders"}
-          count={"35,084"}
+          count={35084}
           poll={"+2.8%"}
           type={"area"}
         />
-        <Charts name={"Growth"} count={"89.87%"} poll={"+2.8%"} type={"bar"} />
+        <Charts name={"Growth"} count={89.87} poll={"+2.8%"} type={"bar"} />
       </div>
 
       <div className="flex justify-center items-center gap-10 md:gap-16 flex-col md:flex-row mb-10 md:mb-10">

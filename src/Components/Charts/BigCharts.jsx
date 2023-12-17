@@ -61,7 +61,7 @@ const data = [
 
 const BigCharts = () => {
   return (
-    <section className="w-auto md:w-2/3 md:h-96 flex flex-col gap-5 bg-white rounded-md shadow-md p-5">
+    <section className="w-auto md:w-2/3 h-96 flex flex-col gap-5 bg-white rounded-md shadow-md p-5">
       <div className="w-full flex justify-between">
         <div>
           <h1 className="font-semibold text-lg">Buisiness Campaign</h1>
@@ -70,7 +70,7 @@ const BigCharts = () => {
           </p>
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex gap-3 md:gap-5">
           <p className="flex items-center text-primary">
             <GoDotFill /> Open Rate{" "}
           </p>
@@ -87,8 +87,8 @@ const BigCharts = () => {
           data={data}
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+            right: 5,
+            left: 5,
             bottom: 5,
           }}
         >
