@@ -2,7 +2,10 @@ import Charts from "@/Components/Charts/Charts";
 
 export default function Home() {
   return (
-    <main className="w-full p-10">
+    <main className="w-full py-10 px-5 md:px-20 lg:px-32">
+      <h1 className="mb-5 md:mb-10 text-lg tex md:text-xl font-semibold">
+        Welcome to Dashboard
+      </h1>
       <div className="w-full flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 lg:gap-24">
         <Charts
           name={"New Customers"}
