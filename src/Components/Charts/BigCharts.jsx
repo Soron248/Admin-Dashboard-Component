@@ -86,10 +86,10 @@ const BigCharts = () => {
           height={300}
           data={data}
           margin={{
-            top: 5,
-            right: 5,
-            left: 5,
-            bottom: 5,
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: 0,
           }}
         >
           <defs>
@@ -103,8 +103,8 @@ const BigCharts = () => {
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
+          <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+          <YAxis tick={{ fontSize: 10 }} />
           <Tooltip contentStyle={{ borderRadius: "10%" }} />
           <Legend />
           <Area
@@ -112,6 +112,7 @@ const BigCharts = () => {
             dataKey="OR"
             stroke="#8884d8"
             fillOpacity={1}
+            strokeWidth={2}
             fill="url(#colorUv)"
             dot={true}
           />
@@ -119,6 +120,7 @@ const BigCharts = () => {
             type="monotone"
             dataKey="RP"
             stroke="#82ca9d"
+            strokeWidth={2}
             fillOpacity={1}
             fill="url(#colorPv)"
             dot={true}

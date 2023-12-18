@@ -6,6 +6,7 @@ import { PiSquaresFour } from "react-icons/pi";
 import { IoMailOutline } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { TfiMenu } from "react-icons/tfi";
+import { GrClose } from "react-icons/gr";
 import Image from "next/image";
 import { Navbar } from "../Navbar/Navbar";
 
@@ -16,8 +17,8 @@ export const Header = () => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <>
-      <section className="w-full bg-white flex justify-between md:justify-center items-center gap-8 py-4 px-2  border-b-2 border-black border-opacity-5">
+    <header className="w-full sticky top-0 z-50">
+      <section className="w-full  bg-white flex justify-between md:justify-center items-center gap-8 py-4 px-2  border-b-2 border-black border-opacity-5 ">
         <h1 className="text-2xl font-bold text-secondary">
           App<span className="font-light text-primary">sosis</span>
         </h1>
@@ -44,14 +45,21 @@ export const Header = () => {
             className="w-8 h-8 rounded-full border-2 border-opacity-30"
           />
 
-          <TfiMenu
-            className="text-2xl text-black lg:hidden cursor-pointer"
-            onClick={toggleMenu}
-          />
+          {menuOpen ? (
+            <GrClose
+              className="text-2xl text-black lg:hidden cursor-pointer"
+              onClick={toggleMenu}
+            />
+          ) : (
+            <TfiMenu
+              className="text-2xl text-black lg:hidden cursor-pointer"
+              onClick={toggleMenu}
+            />
+          )}
         </div>
       </section>
 
       <Navbar menuOpen={menuOpen} />
-    </>
+    </header>
   );
 };
