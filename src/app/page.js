@@ -1,6 +1,8 @@
 import Card from "@/Components/Card/Card";
 import BigCharts from "@/Components/Charts/BigCharts";
 import Charts from "@/Components/Charts/Charts";
+import { FaMoneyCheck } from "react-icons/fa";
+import { BiMoneyWithdraw } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -9,7 +11,25 @@ export default function Home() {
         Welcome to Dashboard
       </h1>
 
-      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-10 md:gap-16 lg:gap-24 mb-10 md:mb-10">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-5 md:gap10 mb-10 md:mb-10">
+        <div className="w-full sm:w-1/4 h-36 flex flex-col  gap-3">
+          <div className="w-full  h-full bg-white rounded-md shadow-md flex justify-between items-center gap-3 px-10">
+            <FaMoneyCheck className="text-4xl text-yellow-500" />
+            <div className="flex flex-col items-end">
+              <p className="font-semibold text-sm ">$3249</p>
+              <h3 className="font-light text-gray-500">Total Revenue</h3>
+            </div>
+          </div>
+
+          <div className="w-full h-full bg-white rounded-md shadow-md flex justify-between items-center gap-3 px-10">
+            <BiMoneyWithdraw className="text-4xl text-rose-500" />
+            <div className="flex flex-col items-end">
+              <p className="font-semibold text-sm ">$687</p>
+              <h3 className="font-light text-gray-500">Ad. Expense</h3>
+            </div>
+          </div>
+        </div>
+
         <Charts
           name={"New Customers"}
           count={3897}
