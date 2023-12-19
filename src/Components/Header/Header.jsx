@@ -17,7 +17,7 @@ export const Header = () => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full sticky top-0 z-50 overflow-hidden">
       <section className="w-full  bg-white flex justify-between md:justify-center items-center gap-8 py-4 px-2  border-b-2 border-black border-opacity-5 ">
         <h1 className="text-2xl font-bold text-secondary">
           App<span className="font-light text-primary">sosis</span>

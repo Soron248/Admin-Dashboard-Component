@@ -3,10 +3,12 @@ import BigCharts from "@/Components/Charts/BigCharts";
 import Charts from "@/Components/Charts/Charts";
 import { FaMoneyCheck } from "react-icons/fa";
 import { BiMoneyWithdraw } from "react-icons/bi";
+import Table from "@/Components/Table/Table";
+import RoundCharts from "@/Components/Charts/RoundCharts";
 
 export default function Home() {
   return (
-    <main className="w-full py-10 px-5 md:px-20 lg:px-32">
+    <main className="w-full py-10 px-5 md:px-20 lg:px-28 overflow-x-hidden">
       <h1 className="mb-5 md:mb-10 text-lg tex md:text-xl font-semibold">
         Welcome to Dashboard
       </h1>
@@ -45,9 +47,14 @@ export default function Home() {
         <Charts name={"Growth"} count={89.87} poll={"+2.8%"} type={"bar"} />
       </div>
 
-      <div className="flex justify-center items-center gap-10 md:gap-16 flex-col md:flex-row mb-10 md:mb-10">
+      <div className="w-full flex justify-center items-center gap-10 md:gap-16 flex-col md:flex-row mb-10 md:mb-10">
         <Card />
         <BigCharts />
+      </div>
+
+      <div className="w-full md:h-96 flex justify-center items-center gap-10 md:gap-16 flex-col md:flex-row mb-10 md:mb-10">
+        <Table />
+        <RoundCharts />
       </div>
     </main>
   );
