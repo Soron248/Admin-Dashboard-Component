@@ -1,12 +1,26 @@
+"use client";
 import Card from "@/Components/Card/Card";
 import BigCharts from "@/Components/Charts/BigCharts";
 import Charts from "@/Components/Charts/Charts";
 import { FaMoneyCheck } from "react-icons/fa";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import Table from "@/Components/Table/Table";
-import RoundCharts from "@/Components/Charts/RoundCharts";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+const DynamicRoundCharts = dynamic(
+  () => import("@/Components/Charts/RoundCharts"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    // Set isClient to true when the component is mounted on the client side
+    setIsClient(true);
+  }, []);
+
   return (
     <main className="w-full py-10 px-5 md:px-20 lg:px-28 overflow-x-hidden">
       <h1 className="mb-5 md:mb-10 text-lg tex md:text-xl font-semibold">
@@ -54,7 +68,7 @@ export default function Home() {
 
       <div className="w-full md:h-96 flex justify-center items-center gap-10 md:gap-16 flex-col md:flex-row mb-10 md:mb-10">
         <Table />
-        <RoundCharts />
+        {isClient && <DynamicRoundCharts />}
       </div>
     </main>
   );

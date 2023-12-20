@@ -2,19 +2,8 @@
 import React, { useState } from "react";
 
 const Card = () => {
-  const [width, setWidth] = useState("33.333333%");
-  const [height, setHeight] = useState("384px ");
-
-  // const handleResize = () => {
-  //   setWidth("50%");
-  //   setHeight("200px");
-  // };
   return (
-    <div
-      className="card w-auto md:w-1/3 md:h-96 bg-white shadow-md rounded-md"
-      style={{ width, height, resize: "both", overflow: "auto" }}
-      // onMouseUp={handleResize}
-    >
+    <div className="card w-auto md:w-1/3 md:h-96 bg-white shadow-md rounded-md resize overflow-auto">
       <figure className="px-5 pt-5">
         <img
           src="https://static.vecteezy.com/system/resources/previews/004/379/380/original/professional-business-team-flat-illustration-confident-businessmen-and-businesswomen-cartoon-characters-successful-company-staff-corporate-personnel-office-workers-directors-board-vector.jpg"

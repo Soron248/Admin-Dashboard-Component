@@ -6,20 +6,8 @@ import BarChart from "./all/BarChart";
 import CountUp from "react-countup";
 
 const Charts = ({ name, count, poll, type }) => {
-  const [width, setWidth] = useState("25%");
-  const [height, setHeight] = useState("144px");
-
-  // const handleResize = () => {
-  //   setWidth("50%");
-  //   setHeight("200px");
-  // };
-
   return (
-    <section
-      className="w-full sm:w-1/4 h-36 bg-white rounded-md shadow-md flex gap-3 px-3 py-5"
-      style={{ width, height, resize: "both", overflow: "auto" }}
-      // onMouseUp={handleResize}
-    >
+    <section className="w-full sm:w-1/4 h-36 bg-white rounded-md shadow-md flex gap-3 px-3 py-5 resize overflow-auto">
       <div className="w-full flex flex-col gap-2 items-start justify-center">
         <h3 className="font-bold">{name}</h3>
         <h1 className="text-xl font-bold text-primary">
