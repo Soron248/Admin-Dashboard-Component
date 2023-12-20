@@ -1,8 +1,20 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 const Table = () => {
+  const [width, setWidth] = useState("75%");
+  const [height, setHeight] = useState("100%");
+
+  // const handleResize = () => {
+  //   setWidth("50%");
+  //   setHeight("200px");
+  // };
   return (
-    <div className="overflow-x-auto h-full overflow-y-scroll w-full md:w-3/4 bg-white shadow-md py-3 px-5 rounded-md">
+    <div
+      className="overflow-x-scroll h-full overflow-y-scroll w-full md:w-3/4 bg-white shadow-md py-3 px-5 rounded-md"
+      style={{ width, height, resize: "both", overflow: "auto" }}
+      // onMouseUp={handleResize}
+    >
       <div className="mb-5">
         <h1 className="font-semibold text-lg">Projects of the Month</h1>
         <p className="font-light text-gray-500">Technology</p>

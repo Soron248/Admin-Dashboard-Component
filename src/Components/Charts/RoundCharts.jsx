@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
 const data = [
@@ -11,10 +11,22 @@ const data = [
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const RoundCharts = () => {
-  const chartSize = 300; // Adjust as needed
+  const chartSize = 300;
+
+  const [width, setWidth] = useState("25%");
+  const [height, setHeight] = useState("100%");
+
+  // const handleResize = () => {
+  //   setWidth("50%");
+  //   setHeight("200px");
+  // };
 
   return (
-    <div className="w-full md:w-1/4 h-full  bg-white shadow-md rounded-md flex flex-col items-center justify-center p-5">
+    <div
+      className="w-full md:w-1/4 h-full  bg-white shadow-md rounded-md flex flex-col items-center justify-center p-5"
+      style={{ width, height, resize: "both", overflow: "hidden" }}
+      // onMouseUp={handleResize}
+    >
       <div className="w-full text-left">
         <h1 className="font-semibold text-lg">Our Visitors</h1>
         <p className="font-light text-gray-500">

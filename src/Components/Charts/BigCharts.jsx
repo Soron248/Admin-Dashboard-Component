@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { GoDotFill } from "react-icons/go";
 import {
   XAxis,
@@ -58,8 +58,20 @@ const data = [
 ];
 
 const BigCharts = () => {
+  const [width, setWidth] = useState("66.666667%");
+  const [height, setHeight] = useState("384px");
+
+  // const handleResize = () => {
+  //   setWidth("50%");
+  //   setHeight("200px");
+  // };
+
   return (
-    <section className="w-auto md:w-2/3 h-96 flex flex-col gap-5 bg-white rounded-md shadow-md p-5">
+    <section
+      className="w-auto md:w-2/3 h-96 flex flex-col gap-5 bg-white rounded-md shadow-md p-5"
+      style={{ width, height, resize: "both", overflow: "auto" }}
+      // onMouseUp={handleResize}
+    >
       <div className="w-full flex justify-between">
         <div>
           <h1 className="font-semibold text-lg">Buisiness Campaign</h1>
