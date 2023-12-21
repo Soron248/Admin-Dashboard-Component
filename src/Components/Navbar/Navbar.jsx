@@ -36,7 +36,7 @@ export const Navbar = ({ menuOpen }) => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content flex flex-col gap-2 z-10  p-3  shadow-md rounded-box w-fit top-10 bg-white"
+            className="dropdown-content flex flex-col gap-2 z-50  p-3  shadow-md rounded-box w-fit top-10 bg-white"
           >
             <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
@@ -186,7 +186,7 @@ export const Navbar = ({ menuOpen }) => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content flex flex-col gap-2 z-10  p-3  shadow-md rounded-box w-fit top-10 bg-white"
+            className="dropdown-content flex flex-col gap-2 z-50  p-3  shadow-md rounded-box w-fit top-10 bg-white overflow-visible"
           >
             <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />

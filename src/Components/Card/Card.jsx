@@ -7,7 +7,7 @@ const Card = () => {
       <figure className="px-5 pt-5">
         <img
           src="https://static.vecteezy.com/system/resources/previews/004/379/380/original/professional-business-team-flat-illustration-confident-businessmen-and-businesswomen-cartoon-characters-successful-company-staff-corporate-personnel-office-workers-directors-board-vector.jpg"
-          alt="Shoes"
+          alt="office"
           className="w-full h-full rounded-xl shadow-md"
           width={300}
           height={100}

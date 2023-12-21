@@ -16,14 +16,14 @@ const DynamicRoundCharts = dynamic(
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    // Set isClient to true when the component is mounted on the client side
     setIsClient(true);
   }, []);
 
   return (
     <main className="w-full py-10 px-5 md:px-20 lg:px-28 overflow-x-hidden">
-      <h1 className="mb-5 md:mb-10 text-lg tex md:text-xl font-semibold">
+      <h1 className="mb-5 md:mb-10 text-lg md:text-xl font-semibold">
         Welcome to Dashboard
       </h1>
 
