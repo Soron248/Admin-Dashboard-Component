@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
 
-export const Navbar = ({ menuOpen }) => {
+export const Navbar = ({ menuOpen, toggleMenu }) => {
   return (
     <section
       className={`w-full bg-white  lg:flex ${
@@ -20,7 +20,11 @@ export const Navbar = ({ menuOpen }) => {
             className="flex items-center gap-2 hover:text-primary cursor-pointer focus:text-primary"
           >
             <IoCubeOutline className="text-xl" />
-            <span className="text-sm">DASHBOARD</span>
+            <Link href={"/"}>
+              <span className="text-sm" onClick={toggleMenu}>
+                DASHBOARD
+              </span>
+            </Link>
           </div>
         </div>
 
@@ -31,7 +35,7 @@ export const Navbar = ({ menuOpen }) => {
             className="flex items-center gap-2 hover:text-primary cursor-pointer focus:text-primary"
           >
             <IoCubeOutline className="text-xl" />
-            <span className="text-sm">Name</span>
+            <span className="text-sm">Component</span>
             <IoIosArrowDown className="text-sm" />
           </div>
           <ul
@@ -40,7 +44,11 @@ export const Navbar = ({ menuOpen }) => {
           >
             <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
-              <span className="text-sm">profile</span>
+              <Link href={"/form"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Form
+                </span>
+              </Link>
             </li>
             <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />

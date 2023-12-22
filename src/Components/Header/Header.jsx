@@ -114,7 +114,7 @@ export const Header = () => {
         </div>
       </section>
 
-      <Navbar menuOpen={menuOpen} />
+      <Navbar menuOpen={menuOpen} toggleMenu={toggleMenu} />
     </header>
   );
 };
