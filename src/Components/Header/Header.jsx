@@ -12,6 +12,7 @@ import { Navbar } from "../Navbar/Navbar";
 import { LuBringToFront } from "react-icons/lu";
 import { SlCalender } from "react-icons/sl";
 import { IoMdSettings } from "react-icons/io";
+import Link from "next/link";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -135,13 +136,16 @@ export const Header = () => {
 
           <GoBell className="text-2xl text-black " />
 
-          <Image
-            src={srn}
-            alt="logo"
-            height={100}
-            width={100}
-            className="w-8 h-8 rounded-full border-2 border-opacity-30"
-          />
+          <Link href={"/user_profile"}>
+            {" "}
+            <Image
+              src={srn}
+              alt="logo"
+              height={100}
+              width={100}
+              className="w-8 h-8 rounded-full border-2 border-opacity-30"
+            />
+          </Link>
 
           {menuOpen ? (
             <GrClose
