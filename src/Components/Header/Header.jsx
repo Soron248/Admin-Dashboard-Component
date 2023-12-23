@@ -9,6 +9,9 @@ import { TfiMenu } from "react-icons/tfi";
 import { GrClose } from "react-icons/gr";
 import Image from "next/image";
 import { Navbar } from "../Navbar/Navbar";
+import { LuBringToFront } from "react-icons/lu";
+import { SlCalender } from "react-icons/sl";
+import { IoMdSettings } from "react-icons/io";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,13 +36,53 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center gap-3 md:gap-5">
-          <PiSquaresFour className="text-2xl text-black " />
+          <div className="relative group">
+            <PiSquaresFour className="text-2xl text-black group-hover:cursor-pointer" />
+
+            <div className="w-60 absolute  flex-col gap-5 bg-white shadow-md p-2 px-3 rounded-md border-2 top-6 -right-10 hidden group-hover:flex z-50">
+              <div className="flex gap-2 items-center justify-between">
+                <div className="flex items-center w-8 h-8">
+                  <LuBringToFront className="text-xl text-purple-500" />
+                </div>
+                <div>
+                  <h1 className="font-semibold text-sm">Luanch Admin</h1>
+                  <p className="text-xs opacity-50">
+                    Lorem ipsum dolor sit amet
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-2 items-center justify-between">
+                <div className="flex items-center w-8 h-8">
+                  <SlCalender className="text-xl text-sky-500" />
+                </div>
+                <div>
+                  <h1 className="font-semibold text-sm">Event Today</h1>
+                  <p className="text-xs opacity-50">
+                    Lorem ipsum dolor sit amet
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-2 items-center justify-between">
+                <div className="flex items-center w-8 h-8">
+                  <IoMdSettings className="text-xl text-blue-600" />
+                </div>
+                <div>
+                  <h1 className="font-semibold text-sm">Settings</h1>
+                  <p className="text-xs opacity-50">
+                    Lorem ipsum dolor sit amet
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="relative group">
             <IoMailOutline className="text-2xl text-black group-hover:cursor-pointer" />
             {/* <div className="w-3 h-3 bg-white absolute border-2 top-7 rotate-45 left-2"></div> */}
 
-            <div className="w-60 absolute  flex-col gap-5 bg-white shadow-md p-2 rounded-md border-2 top-8 -left-24 hidden group-hover:flex z-50">
+            <div className="w-60 absolute  flex-col gap-5 bg-white shadow-md p-2 rounded-md border-2 top-7 -left-24 hidden group-hover:flex z-50">
               <div className="flex gap-2 items-center justify-between">
                 <div className="mask mask-squircle w-8 h-8">
                   <img

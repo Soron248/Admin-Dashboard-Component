@@ -40,9 +40,9 @@ const Table = () => {
             <td>
               Zemlak, Daniel and Leannon
               <br />
-              <span className=" border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
+              <p className="w-fit border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
                 Desktop Support Technician
-              </span>
+              </p>
             </td>
             <td>Purple</td>
             <th>
@@ -72,9 +72,9 @@ const Table = () => {
             <td>
               Carroll Group
               <br />
-              <span className=" border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
+              <p className="w-fit border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
                 Tax Accountant
-              </span>
+              </p>
             </td>
             <td>Red</td>
             <th>
@@ -104,9 +104,9 @@ const Table = () => {
             <td>
               Rowe-Schoen
               <br />
-              <span className=" border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
+              <p className="w-fit border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
                 Office Assistant I
-              </span>
+              </p>
             </td>
             <td>Crimson</td>
             <th>
@@ -136,9 +136,9 @@ const Table = () => {
             <td>
               Wyman-Ledner
               <br />
-              <span className=" border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
+              <p className=" w-fit border-2 rounded-full border-opacity-60 border-black font-light text-xs px-1">
                 Community Outreach Specialist
-              </span>
+              </p>
             </td>
             <td>Indigo</td>
             <th>
