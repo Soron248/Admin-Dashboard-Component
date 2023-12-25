@@ -1,11 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { TagsInput } from "react-tag-input-component";
+import { useDropzone } from "react-dropzone";
 
 const steps = [
   "Select campaign settings",
@@ -15,8 +17,15 @@ const steps = [
 ];
 
 export default function HorizontalLinearStepper() {
+  const [selected, setSelected] = useState([]);
+
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
+
+  const onDrop = useCallback((acceptedFiles) => {
+    // Do something with the files
+  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const isStepOptional = (step) => {
     return step === 1 || step === 3;
@@ -67,15 +76,15 @@ export default function HorizontalLinearStepper() {
           <form className="w-full bg-white rounded-md shadow-md px-5 py-8">
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="name"
+                className="block text-gray-600 text-sm font-semibold mb-2"
+                htmlFor="full-name"
               >
-                Name
+                Full Name
               </label>
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="full-name"
+                name="full-name"
                 className="w-full px-3 py-2 border rounded-md focus:outline-none"
                 required
               />
@@ -83,15 +92,15 @@ export default function HorizontalLinearStepper() {
 
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="email"
+                className="block text-gray-600 text-sm font-semibold mb-2"
+                htmlFor="name"
               >
-                Email
+                Nick Name
               </label>
               <input
-                type="email"
-                id="email"
-                name="email"
+                type="text"
+                id="name"
+                name="name"
                 className="w-full px-3 py-2 border rounded-md focus:outline-none "
                 required
               />
@@ -99,7 +108,7 @@ export default function HorizontalLinearStepper() {
 
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
+                className="block text-gray-600 text-sm font-semibold mb-2"
                 htmlFor="age"
               >
                 Age
@@ -125,15 +134,15 @@ export default function HorizontalLinearStepper() {
           <form className="w-full bg-white rounded-md shadow-md px-5 py-8">
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="name"
+                className="block text-gray-500 text-sm font-semibold mb-2"
+                htmlFor="phone"
               >
-                Name
+                Phone
               </label>
               <input
-                type="text"
-                id="name"
-                name="name"
+                type="number"
+                id="phone"
+                name="phone"
                 className="w-full px-3 py-2 border rounded-md focus:outline-none"
                 required
               />
@@ -141,7 +150,7 @@ export default function HorizontalLinearStepper() {
 
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
+                className="block text-gray-500 text-sm font-semibold mb-2"
                 htmlFor="email"
               >
                 Email
@@ -157,24 +166,20 @@ export default function HorizontalLinearStepper() {
 
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
+                className="block text-gray-500 text-sm font-semibold mb-2"
                 htmlFor="age"
               >
-                Age
+                Add Skills
               </label>
-              <select
-                id="age"
-                name="age"
-                className="w-full px-3 py-2 border bg-white rounded-md focus:outline-none "
-                required
-              >
-                <option value="" defaultValue>
-                  Select Age
-                </option>
-                <option value="18-25">18-25</option>
-                <option value="26-35">26-35</option>
-                <option value="36-45">36-45</option>
-              </select>
+              <TagsInput
+                value={selected}
+                onChange={setSelected}
+                name="skills"
+                placeHolder="enter skills"
+              />
+              <em className="text-sm text-gray-500">
+                press enter to add new tag
+              </em>
             </div>
           </form>
         );
@@ -183,42 +188,52 @@ export default function HorizontalLinearStepper() {
           <form className="w-full bg-white rounded-md shadow-md px-5 py-8">
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="name"
+                className="block text-gray-500 text-sm font-semibold mb-2"
+                htmlFor="date"
               >
-                Name
+                Birth Date
               </label>
               <input
-                type="text"
-                id="name"
-                name="name"
+                type="date"
+                id="date"
+                name="date"
                 className="w-full px-3 py-2 border rounded-md focus:outline-none"
                 required
               />
             </div>
 
             <div className="mb-4">
-              <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="email"
-              >
-                Email
+              <label className="block text-gray-500 text-sm font-semibold mb-2">
+                Gender
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border rounded-md focus:outline-none "
-                required
-              />
+              <div className="flex">
+                <label className="inline-flex items-center mr-4">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    className="form-radio text-blue-500"
+                  />
+                  <span className="ml-2">Male</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    className="form-radio text-pink-500"
+                  />
+                  <span className="ml-2">Female</span>
+                </label>
+              </div>
             </div>
 
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
+                className="block text-gray-500 text-sm font-semibold mb-2"
                 htmlFor="age"
               >
-                Age
+                Location
               </label>
               <select
                 id="age"
@@ -227,11 +242,11 @@ export default function HorizontalLinearStepper() {
                 required
               >
                 <option value="" defaultValue>
-                  Select Age
+                  Select Place
                 </option>
-                <option value="18-25">18-25</option>
-                <option value="26-35">26-35</option>
-                <option value="36-45">36-45</option>
+                <option value="18-25">Dhaka</option>
+                <option value="26-35">Chattogram</option>
+                <option value="36-45">Mymensingh</option>
               </select>
             </div>
           </form>
@@ -242,56 +257,36 @@ export default function HorizontalLinearStepper() {
           <form className="w-full bg-white rounded-md shadow-md px-5 py-8">
             <div className="mb-4">
               <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="name"
+                className="block text-gray-500 text-sm font-semibold mb-2"
+                htmlFor="message"
               >
-                Name
+                Message
               </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-3 py-2 border rounded-md focus:outline-none"
-                required
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none "
               />
             </div>
 
-            <div className="mb-4">
+            <div {...getRootProps()}>
               <label
-                className="block text-black text-sm font-semibold mb-2"
+                className="block text-gray-500 text-sm font-semibold mb-2"
                 htmlFor="email"
               >
-                Email
+                Image
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border rounded-md focus:outline-none "
-                required
-              />
-            </div>
-
-            <div className="mb-4">
-              <label
-                className="block text-black text-sm font-semibold mb-2"
-                htmlFor="age"
-              >
-                Age
-              </label>
-              <select
-                id="age"
-                name="age"
-                className="w-full px-3 py-2 border bg-white rounded-md focus:outline-none "
-                required
-              >
-                <option value="" defaultValue>
-                  Select Age
-                </option>
-                <option value="18-25">18-25</option>
-                <option value="26-35">26-35</option>
-                <option value="36-45">36-45</option>
-              </select>
+              <input {...getInputProps()} />
+              {isDragActive ? (
+                <p className="w-full h-44 flex justify-center items-center px-3 py-2 text-gray-400 font-semibold border rounded-md focus:outline-none ">
+                  Drop the files here ...
+                </p>
+              ) : (
+                <p className="w-full h-44 flex justify-center items-center px-3 py-2 border text-gray-400 font-semibold rounded-md focus:outline-none ">
+                  Drag 'n' drop some files here, or click to select files
+                </p>
+              )}
             </div>
           </form>
         );
