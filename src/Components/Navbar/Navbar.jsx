@@ -42,17 +42,25 @@ export const Navbar = ({ menuOpen, toggleMenu }) => {
             tabIndex={0}
             className="dropdown-content flex flex-col gap-2 z-50  p-3  shadow-md rounded-box w-fit top-10 bg-white"
           >
-            <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
-              <Link href={"/form"}>
+              <Link href={"/reusable/form"}>
                 <span className="text-sm" onClick={toggleMenu}>
                   Form
                 </span>
               </Link>
             </li>
-            <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
-              <Link href={"/table"}>
+              <Link href={"/reusable/form_wizard"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Wizard
+                </span>
+              </Link>
+            </li>
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+              <GoDotFill className="text-primary mr-2" />
+              <Link href={"/reusable/table"}>
                 <span className="text-sm" onClick={toggleMenu}>
                   Table
                 </span>
@@ -68,20 +76,20 @@ export const Navbar = ({ menuOpen, toggleMenu }) => {
             className="flex items-center gap-2 hover:text-primary cursor-pointer focus:text-primary"
           >
             <IoCubeOutline className="text-xl" />
-            <span className="text-sm">Name</span>
+            <span className="text-sm">Company</span>
             <IoIosArrowDown className="text-sm" />
           </div>
           <ul
             tabIndex={0}
             className="dropdown-content flex flex-col gap-2 z-10  p-3  shadow-md rounded-box w-fit top-10 bg-white"
           >
-            <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
-              <span className="text-sm">profile</span>
-            </li>
-            <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
-              <GoDotFill className="text-primary mr-2" />
-              <span className="text-sm">setting</span>
+              <Link href={"/company/profile"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Profile
+                </span>
+              </Link>
             </li>
           </ul>
         </div>
