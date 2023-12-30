@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { BiSearch } from "react-icons/bi";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -8,8 +9,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 
 function createData(name, code, population, size) {
   const density = population / size;
@@ -21,6 +20,7 @@ export default function TableData() {
   const [rows, setRows] = useState([]);
   const [rowdata, setRowdata] = useState([]);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fetchData = async (url) => {
     const req = await fetch(url);
@@ -36,6 +36,11 @@ export default function TableData() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   useEffect(() => {
     fetchData("https://dummyjson.com/users");
   }, []);
@@ -48,23 +53,30 @@ export default function TableData() {
     }
   }, [rowdata]);
 
+  const filteredRows = rows.filter((row) =>
+    Object.values(row).some(
+      (value) =>
+        typeof value === "string" &&
+        value.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+
   return (
     <>
       <Paper
         sx={{ width: "100%", overflow: "hidden" }}
         className="m-auto mt-10 p-5"
       >
-        <Autocomplete
-          disablePortal
-          id="combo-box-demo"
-          options={rows}
-          getOptionLabel={(rows) => rows.firstName || ""}
-          onChange={(e, v) => setRowdata(v)}
-          sx={{ width: 300 }}
-          renderInput={(params) => (
-            <TextField {...params} label="search by name" />
-          )}
-        />
+        <div className="w-full md:w-fit flex items-center justify-between mb-4 border rounded px-2 py-2">
+          <input
+            type="text"
+            placeholder="Search..."
+            className=" outline-none"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+          <BiSearch className="ml-2 text-gray-500 cursor-pointer" />
+        </div>
         <TableContainer sx={{ maxHeight: 600 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
@@ -87,7 +99,7 @@ export default function TableData() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows
+              {filteredRows
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   return (
@@ -106,7 +118,7 @@ export default function TableData() {
         <TablePagination
           rowsPerPageOptions={[5, 15, 30]}
           component="div"
-          count={rows.length}
+          count={filteredRows.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

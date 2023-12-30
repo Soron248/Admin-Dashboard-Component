@@ -271,7 +271,7 @@ const Form = () => {
           <input
             type="color"
             id="color"
-            className="w-10 rounded p-1 "
+            className="w-full md:w-10 rounded px-3 py-2 md:px-1 md:py-1 "
             required
           />
         </div>
