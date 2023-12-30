@@ -1,7 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import { TagsInput } from "react-tag-input-component";
+import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
+import dayjs from "dayjs";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 
 const Form = () => {
+  const [selected, setSelected] = useState(["S1"]);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -198,6 +206,22 @@ const Form = () => {
         <div className="mb-4">
           <label
             className="block text-black text-sm font-semibold mb-2"
+            htmlFor="age"
+          >
+            Add Service
+          </label>
+          <TagsInput
+            value={selected}
+            onChange={setSelected}
+            name="services"
+            placeHolder="enter services"
+          />
+          <em className="text-sm text-gray-500">press enter to add new tag</em>
+        </div>
+
+        <div className="mb-4">
+          <label
+            className="block text-black text-sm font-semibold mb-2"
             htmlFor="phone"
           >
             Phone
@@ -213,7 +237,44 @@ const Form = () => {
           />
         </div>
 
-        {/* ... (previous code) */}
+        <div className="mb-4">
+          <label
+            className="block text-black text-sm font-semibold mb-2"
+            htmlFor="date"
+          >
+            Date
+          </label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-black text-sm font-semibold">Date</label>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={["TimePicker"]}>
+              <DemoItem>
+                <TimePicker defaultValue={dayjs("2022-04-17T15:30")} />
+              </DemoItem>
+            </DemoContainer>
+          </LocalizationProvider>
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-black text-sm font-semibold mb-2">
+            Color
+          </label>
+          <input
+            type="color"
+            id="color"
+            className="w-10 rounded p-1 "
+            required
+          />
+        </div>
 
         <div className="mb-4">
           <button
