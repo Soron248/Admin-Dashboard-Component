@@ -21,3 +21,9 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
+
+@media (max-width: 768px) {
+  .fc-toolbar {
+    font-size: 8px; /* Adjust the font size for smaller screens */
+  }
+}

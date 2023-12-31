@@ -66,6 +66,14 @@ export const Navbar = ({ menuOpen, toggleMenu }) => {
                 </span>
               </Link>
             </li>
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+              <GoDotFill className="text-primary mr-2" />
+              <Link href={"/reusable/calender"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Calender
+                </span>
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -109,20 +117,28 @@ export const Navbar = ({ menuOpen, toggleMenu }) => {
             className="flex items-center gap-2 hover:text-primary cursor-pointer focus:text-primary"
           >
             <IoCubeOutline className="text-xl" />
-            <span className="text-sm">Name</span>
+            <span className="text-sm">Page</span>
             <IoIosArrowDown className="text-sm" />
           </div>
           <ul
             tabIndex={0}
             className="dropdown-content flex flex-col gap-2 z-10  p-3  shadow-md rounded-box w-fit top-10 bg-white"
           >
-            <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
-              <span className="text-sm">profile</span>
+              <Link href={"/authentication/login"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Login
+                </span>
+              </Link>
             </li>
-            <li className="flex gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
               <GoDotFill className="text-primary mr-2" />
-              <span className="text-sm">setting</span>
+              <Link href={"/authentication/registration"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Registration
+                </span>
+              </Link>
             </li>
           </ul>
         </div>

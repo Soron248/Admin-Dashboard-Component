@@ -19,7 +19,7 @@ const TimeLine = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="bg-white p-3 rounded-md rounded-tl-none shadow-md">
+            <div className="bg-white p-3 rounded-3xl rounded-tl-none shadow-md">
               <div className="flex items-center gap-3 mb-3">
                 <Image
                   src={srn}
@@ -48,7 +48,7 @@ const TimeLine = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="bg-white p-3 rounded-md rounded-tr-none shadow-md">
+            <div className="bg-white p-3 rounded-3xl rounded-tr-none shadow-md">
               <div className="flex items-center justify-end gap-3 mb-3">
                 <h1 className="font-semibold ">Phase 1</h1>
                 <Image
@@ -76,7 +76,7 @@ const TimeLine = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="bg-white p-3 rounded-md rounded-tl-none shadow-md">
+            <div className="bg-white p-3 rounded-3xl rounded-tl-none shadow-md">
               <div className="flex items-center gap-3 mb-3">
                 <Image
                   src={srn}
@@ -103,7 +103,7 @@ const TimeLine = () => {
             <TimelineDot variant="outlined" color="success" />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="bg-white p-3 rounded-md rounded-tr-none shadow-md">
+            <div className="bg-white p-3 rounded-3xl rounded-tr-none shadow-md">
               <div className="flex items-center justify-end gap-3 mb-3">
                 <h1 className="font-semibold ">Phase 1</h1>
                 <Image
