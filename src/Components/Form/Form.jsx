@@ -254,7 +254,7 @@ const Form = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-black text-sm font-semibold">Date</label>
+          <label className="block text-black text-sm font-semibold">Time</label>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["TimePicker"]}>
               <DemoItem>
