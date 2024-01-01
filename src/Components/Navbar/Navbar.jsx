@@ -74,6 +74,14 @@ export const Navbar = ({ menuOpen, toggleMenu }) => {
                 </span>
               </Link>
             </li>
+            <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+              <GoDotFill className="text-primary mr-2" />
+              <Link href={"/reusable/carousel"}>
+                <span className="text-sm" onClick={toggleMenu}>
+                  Carousel
+                </span>
+              </Link>
+            </li>
           </ul>
         </div>
 
