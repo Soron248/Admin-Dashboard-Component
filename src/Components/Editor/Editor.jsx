@@ -14,7 +14,7 @@ export default function page() {
   const mdParser = new MarkdownIt(); // Define mdParser here
 
   return (
-    <div className="flex gap-4 p-4">
+    <div className="flex gap-4">
       <div className="flex-1 border border-gray-300 rounded p-4">
         <MdEditor
           value={markdown}
