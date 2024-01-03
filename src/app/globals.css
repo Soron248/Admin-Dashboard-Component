@@ -27,3 +27,29 @@ body {
     font-size: 8px; /* Adjust the font size for smaller screens */
   }
 }
+
+/* Custom styles for the TagsInput component */
+.custom-tags-input {
+  outline: none !important;
+
+  /* Add any other styles you want */
+}
+
+/* Custom styles for individual tags */
+.custom-tag {
+  outline: none !important;
+  color: white !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(86 96 217 / var(--tw-bg-opacity)) !important;
+  /* Add any other styles you want */
+}
+
+/* Custom styles for the tag remove button */
+.custom-remove {
+  /* Add any other styles you want */
+}
+
+/* Custom styles for suggestions (if applicable) */
+.custom-suggestions {
+  /* Add any other styles you want */
+}
