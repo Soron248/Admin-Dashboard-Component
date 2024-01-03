@@ -4,6 +4,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/Components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "node_modules/preline/dist/*.js",
   ],
   theme: {
     extend: {
@@ -21,5 +22,5 @@ module.exports = {
   daisyui: {
     themes: [""],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui", "preline/plugin")],
 };
