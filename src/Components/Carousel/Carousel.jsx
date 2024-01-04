@@ -34,7 +34,7 @@ const Carousel = () => {
   useEffect(autoSlide, []); // Start auto slide on component mount
 
   return (
-    <div className="w-full sm:w-3/4 lg:w-1/2 h-56 sm:h-72 md:h-96 bg-white shadow-sm rounded-lg overflow-hidden relative ">
+    <div className="w-full sm:w-3/4 lg:w-1/2 h-56 sm:h-72 md:h-96 bg-white shadow-md rounded-lg overflow-hidden relative ">
       {images.map((img, index) => (
         <div key={index}>
           <Image

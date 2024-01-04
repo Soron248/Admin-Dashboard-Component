@@ -5,6 +5,7 @@ module.exports = {
     "./src/Components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "node_modules/preline/dist/*.js",
+    "./node_modules/tw-elements-react/dist/js/**/*.js",
   ],
   theme: {
     extend: {
@@ -22,5 +23,8 @@ module.exports = {
   daisyui: {
     themes: [""],
   },
-  plugins: [require("daisyui", "preline/plugin")],
+  darkMode: "off",
+  plugins: [
+    require("daisyui", "preline/plugin", "tw-elements-react/dist/plugin.cjs"),
+  ],
 };
