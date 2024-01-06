@@ -1,10 +1,21 @@
+"use client";
 import React, { useState } from "react";
 import { PiTelegramLogoFill } from "react-icons/pi";
 import { TagsInput } from "react-tag-input-component";
+import { TESelect } from "tw-elements-react";
 
 const Form2 = () => {
   const [inputType, setInputType] = useState("text");
   const [selected, setSelected] = useState(["React Js"]);
+  const [selectValue, setSelectValue] = useState([]);
+
+  const data = [
+    { text: "One", value: 1 },
+    { text: "Two", value: 2 },
+    { text: "Three", value: 3 },
+    { text: "Four", value: 4 },
+    { text: "Five", value: 5 },
+  ];
 
   const handletype = () => {
     setInputType("date");
@@ -72,40 +83,19 @@ const Form2 = () => {
           </em>
         </div>
 
-        <div className="relative ">
-          <select
-            data-hs-select='{
-      "placeholder": "Select Tech Field...",
-      "toggleTag": "<button type=\"button\"></button>",
-      "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 px-4 pe-9 flex text-nowrap w-full cursor-pointer bg-primary bg-opacity-10 border-l-2 border-primary border-opacity-70 rounded-lg text-start text-sm focus:border-blue-500 focus:ring-blue-500 before:absolute before:inset-0 before:z-[1] dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 light:focus:outline-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600",
-      "dropdownClasses": "mt-2 z-50 w-full max-h-[300px] p-1 space-y-0.5 bg-white border border-primary border-opacity-50 rounded-lg overflow-hidden overflow-y-auto dark:bg-slate-900 dark:border-gray-700",
-      "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hover:bg-primary hover:bg-opacity-10 rounded-lg focus:outline-none focus:bg-gray-100 dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-gray-200 dark:focus:bg-slate-800",
-      "optionTemplate": "<div className=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"hidden hs-selected:block\"><svg class=\"flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500\" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span></div>"
-    }'
-          >
-            <option value="">Choose</option>
-            <option>Name</option>
-            <option>Email address</option>
-            <option>Description</option>
-            <option>User ID</option>
-          </select>
-
-          <div className="absolute top-1/2 end-2.5 -translate-y-1/2">
-            <svg
-              class="flex-shrink-0 w-4 h-4 text-primary"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m7 15 5 5 5-5" />
-              <path d="m7 9 5-5 5 5" />
-            </svg>
+        <div>
+          <div className="w-full ">
+            <TESelect
+              className="w-full bg-primary bg-opacity-10 border-l-2 border-primary border-opacity-70 outline-none rounded-md"
+              data={data}
+              multiple
+              value={selectValue}
+              placeholder="Select options.."
+              onValueChange={(e) => {
+                const newValue = e.map((el) => el.value);
+                setSelectValue(newValue);
+              }}
+            />
           </div>
         </div>
 

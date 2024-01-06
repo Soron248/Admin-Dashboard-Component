@@ -39,8 +39,7 @@ body {
 .custom-tag {
   outline: none !important;
   color: white !important;
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(86 96 217 / var(--tw-bg-opacity)) !important;
+  background-color: #00b8f0 !important;
   /* Add any other styles you want */
 }
 
@@ -52,4 +51,14 @@ body {
 /* Custom styles for suggestions (if applicable) */
 .custom-suggestions {
   /* Add any other styles you want */
+}
+.sidebarimg {
+  background-image: url(../../public/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+.sideheight {
+  height: calc(100dvh - 65.5px);
 }

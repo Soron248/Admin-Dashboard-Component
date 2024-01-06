@@ -322,14 +322,19 @@ export default function HorizontalLinearStepper() {
       </Stepper>
       {activeStep === steps.length ? (
         <>
-          <Typography sx={{ mt: 2, mb: 1 }}>
+          <Typography component="div" sx={{ mt: 2, mb: 1 }}>
             <div className="w-full text-center py-10 font-semibold text-xl">
               All steps <span className="text-green-500">completed !</span>
             </div>
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
+            <Button
+              onClick={handleReset}
+              sx={{ mr: 1, border: "solid #1976D2", color: " #1976D2" }}
+            >
+              Reset
+            </Button>
           </Box>
         </>
       ) : (
@@ -339,21 +344,27 @@ export default function HorizontalLinearStepper() {
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
-              color="inherit"
               disabled={activeStep === 0}
               onClick={handleBack}
-              sx={{ mr: 1 }}
+              sx={{ mr: 1, border: "solid black", color: "black" }}
             >
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
             {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+              <Button
+                color="inherit"
+                onClick={handleSkip}
+                sx={{ mr: 1, border: "solid black", color: "black" }}
+              >
                 Skip
               </Button>
             )}
 
-            <Button onClick={handleNext}>
+            <Button
+              onClick={handleNext}
+              sx={{ mr: 1, border: "solid #1976D2", color: " #1976D2" }}
+            >
               {activeStep === steps.length - 1 ? "Finish" : "Next"}
             </Button>
           </Box>

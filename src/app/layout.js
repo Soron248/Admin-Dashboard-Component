@@ -1,7 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/Components/Header/Header";
-import PrelineScript from "./components/PrelineScript";
+import Sidebar from "@/Components/Sidebar/Sidebar";
 
 const roboto = Roboto({
   weight: "400",
@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
       </body>
-      <PrelineScript />
     </html>
   );
 }

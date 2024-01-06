@@ -1,6 +1,8 @@
 "use client";
-import Form2 from "@/Components/Form2/Form2";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const Form2 = dynamic(() => import("@/Components/Form2/Form2"), { ssr: false });
 
 const page = () => {
   return (

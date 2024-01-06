@@ -13,9 +13,16 @@ import { LuBringToFront } from "react-icons/lu";
 import { SlCalender } from "react-icons/sl";
 import { IoMdSettings } from "react-icons/io";
 import Link from "next/link";
+import Sidebar from "../Sidebar/Sidebar";
+import Switch from "../Switch/Switch";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [bar, setBar] = useState(false);
+
+  const toggleBar = () => {
+    setBar(!bar);
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -149,6 +156,8 @@ export const Header = () => {
             />
           </Link>
 
+          <Switch bar={bar} toggleBar={toggleBar} />
+
           {menuOpen ? (
             <GrClose
               className="text-2xl text-black lg:hidden cursor-pointer"
@@ -163,7 +172,11 @@ export const Header = () => {
         </div>
       </section>
 
-      <Navbar menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      {!bar ? (
+        <Navbar menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      ) : (
+        <Sidebar menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      )}
     </header>
   );
 };
