@@ -259,6 +259,12 @@ export default function AccordionFlush() {
                   <span className="text-sm">Registration</span>
                 </Link>
               </li>
+              <li className="flex w-auto gap-2 items-center cursor-pointer py-2 pr-10 hover:bg-primary hover:bg-opacity-5">
+                <GoDotFill className="text-primary mr-2" />
+                <Link href={"/authentication/contacts"}>
+                  <span className="text-sm">Contacts</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </TECollapse>

@@ -24,7 +24,5 @@ module.exports = {
     themes: [""],
   },
   darkMode: "off",
-  plugins: [
-    require("daisyui", "preline/plugin", "tw-elements-react/dist/plugin.cjs"),
-  ],
+  plugins: [require("daisyui", "tw-elements-react/dist/plugin.cjs")],
 };
