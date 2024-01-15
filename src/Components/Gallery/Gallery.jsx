@@ -29,7 +29,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="w-full max-w-5xl  mb-10 gap-2 md:gap-5 columns-2 md:columns-3 space-y-2 md:space-y-5">
+    <section className="w-full max-w-5xl  mb-10 gap-2 md:gap-5 columns-2 md:columns-3 lg:columns-4 space-y-2 md:space-y-5">
       {images.map((image, index) => (
         <div key={index} className="relative group cursor-pointer">
           <Image
