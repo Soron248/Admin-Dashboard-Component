@@ -19,7 +19,7 @@ const Invoice = () => {
           <p className="text-gray-400 font-semibold">London, UK</p>
         </section>
 
-        <section className="flex  rounded-lg overflow-hidden">
+        <section className="flex rounded-lg overflow-hidden w-fit">
           <div className="bg-primary bg-opacity-60 flex justify-center items-center flex-col p-3 gap-2 text-white font-semibold md:w-32">
             <FaFileAlt className="text-xl" />
             <p className="font-thin text-center">INVOICE No.</p>
@@ -49,7 +49,7 @@ const Invoice = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-gray-500 text-base">
+            <tr className="text-gray-500 text-base border-opacity-20 border-gray-500">
               <th></th>
               <th>Discription</th>
               <th>Quantity</th>
@@ -59,7 +59,7 @@ const Invoice = () => {
           </thead>
           <tbody className="text-gray-500">
             {/* row 1 */}
-            <tr className="hover:bg-gray-100 cursor-pointer">
+            <tr className="hover:bg-gray-100 cursor-pointer border-opacity-20 border-gray-500">
               <th className="text-black">1</th>
               <td>Folder</td>
               <td>45</td>
@@ -67,7 +67,7 @@ const Invoice = () => {
               <td>$123</td>
             </tr>
             {/* row 2 */}
-            <tr className="hover:bg-gray-100 cursor-pointer">
+            <tr className="hover:bg-gray-100 cursor-pointer border-opacity-20 border-gray-500">
               <th className="text-black">2</th>
               <td>Docs</td>
               <td>21</td>
@@ -75,7 +75,7 @@ const Invoice = () => {
               <td>$123</td>
             </tr>
             {/* row 3 */}
-            <tr className="hover:bg-gray-100 cursor-pointer">
+            <tr className="hover:bg-gray-100 cursor-pointer border-opacity-20 border-gray-500">
               <th className="text-black">3</th>
               <td>Mokeups</td>
               <td>78</td>
@@ -110,29 +110,27 @@ const Invoice = () => {
           </div>
         </section>
 
-        <section className="w-60">
+        <section className="w-full md:w-60">
           <table className="table">
             <tbody className="text-gray-500">
               {/* row 1 */}
-              <tr className="hover:bg-gray-100 cursor-pointer">
+              <tr className="hover:bg-gray-100 cursor-pointer border-opacity-20 border-gray-500">
                 <th className="text-gray-600">SUBTOTAL</th>
-                <td className="bg-primary text-white">$1000</td>
+                <td className="bg-primary text-white border-b">$1000</td>
               </tr>
               {/* row 2 */}
-              <tr className="hover:bg-gray-100 cursor-pointer">
+              <tr className="hover:bg-gray-100 cursor-pointer border-opacity-20 border-gray-500">
                 <th className="text-gray-600">Vat</th>
-                <td className="bg-primary text-white">$100</td>
+                <td className="bg-primary text-white border-b">$100</td>
               </tr>
               {/* row 3 */}
-              <tr className="hover:bg-gray-100 cursor-pointer">
+              <tr className="hover:bg-gray-100 cursor-pointer border-opacity-20 border-gray-500">
                 <th className="text-gray-600">DISCOUNT</th>
-                <td className="bg-primary text-white">$10</td>
+                <td className="bg-primary text-white border-b">$10</td>
               </tr>
               {/* row 4 */}
               <tr className="hover:bg-gray-100 cursor-pointer">
-                <th className="bg-primary text-white border-r border-gray-500">
-                  GRAND TOTAL
-                </th>
+                <th className="bg-primary text-white border-r ">GRAND TOTAL</th>
                 <td className="bg-primary text-white">$1200</td>
               </tr>
             </tbody>
